@@ -1,4 +1,4 @@
-FROM fedora:23
+FROM fedora:latest
 
 RUN \
   yum update -y && \
@@ -9,9 +9,9 @@ RUN \
   yum install -y opencpu
 
 RUN \
-  wget https://download2.rstudio.org/rstudio-server-rhel-0.99.896-x86_64.rpm && \
-  yum install -y --nogpgcheck rstudio-server-rhel-0.99.896-x86_64.rpm && \
-  rm rstudio-server-rhel-0.99.896-x86_64.rpm
+  wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.0.44-x86_64.rpm && \
+  yum install -y --nogpgcheck rstudio-server-rhel-1.0.44-x86_64.rpm && \
+  rm rstudio-server-rhel-1.0.44-x86_64.rpm
 
 # Apache ports
 EXPOSE 80
